@@ -1,0 +1,27 @@
+---
+layout: outer
+---
+    {% if page.hero %}
+    <div class="jumbotron">
+        <div class="container">
+            <h1>{{ page.hero-title }}</h1>
+            <h2>{{ page.hero-strap }}</h2>
+        </div>
+    </div> <!-- //end hero-unit -->
+    
+    <div class="jumbotron-sub">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>{{ page.hero-sub }}</p>
+                </div>
+            </div>
+        </div>
+    </div> <!-- //end submain -->
+    {% endif %}
+
+    <div class="container content {% if page.hero %} underHero {% endif %}">
+    
+    {{ content }}
+    
+    </div> <!-- //end container --> 

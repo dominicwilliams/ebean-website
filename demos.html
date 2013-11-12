@@ -1,0 +1,127 @@
+---
+layout: default
+group: demos
+---
+<hr>
+<div class="row">
+
+	<div class="col-sm-3">
+		<div class="well sidebar-nav">
+			<ul class="nav nav-list">
+				<li class="nav-header">Code demos</li>
+				<li class="active"><a href="">Creating entity classes</a></li>
+				<li><a href="">Some simple queries</a></li>
+				<li><a href="">More complex queries</a></li>
+				<li><a href="">Override default lazy loading</a></li>
+				<li><a href="">Using raw SQL to query</a></li>
+				<li><a href="">Database transactions</a></li>
+				<li><a href="">Auto-tuning</a></li>
+			</ul>
+		</div>    	
+	</div> <!-- //end span3 -->
+
+	<div class="col-sm-9">
+		<div class="page-header">
+			<h1>Demos</h1>
+		</div>
+	</div> <!-- //end span9 -->
+
+	<div class="col-sm-9">
+		<div class="section">
+			<div class="page-header">
+				<h2>Create a simple entity</h2>
+			</div>
+			<p><strong>Ebean borrows from a subset of the JPA specification that allows you to markup how your objects map to the database using Java annotations.</strong></p>
+			<p>This means you can use software such as the <a href="http://www.eclipse.org/webtools/dali/">Dail Toolkit</a> for the Eclipse IDE to auto-generate classes from your database that you can process with Ebean.</p>
+			<p>Here is a simple generated entity class representing a site user who reviews products on a website:</p>
+{% highlight java %}
+/**
+ * The persistent class for the user database table.
+ * 
+ */
+@Entity
+@NamedQuery(name="User.findAll", query="SELECT j FROM User j")
+public class User implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @Column(name="sp_id", insertable=false, updatable=false)
+    private int userId;
+
+    @Column(name="user_name")
+    private String userName;
+
+    @Column(name="email")
+    private String email;
+    
+    //bi-directional many-to-one association to JobReview
+    @OneToMany(mappedBy="user")
+    private List<ProductReview> productReviews;
+
+    public String getUserName() {
+        return this.userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+    
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public List<ProductReview> getProductReviews() {
+        return this.productReviews;
+    }
+
+    public void setProductReviews(List<ProductReview> productReviews) {
+        this.productReviews = productReviews;
+    }
+
+    public ProductReview addProductReview(ProductReview productReview) {
+        getProductReviews().add(productReview);
+        productReview.setUser(this);
+
+        return productReview;
+    }
+
+    public ProductReview removeProductReview(ProductReview productReview) {
+        getProductReviews().remove(productReview);
+        productReview.setUser(null);
+
+        return productReview;
+    }
+}
+{% endhighlight %}
+
+			<div class="bs-callout bs-callout-info">
+			    <ul>
+			        <li>The user id field above has special annotations that reflect that it is an auto-increment primary key field in the database.</li>
+			        <li>Management of the productReviews field above illustrates how one to many relationships within the database are manifested.</li>
+			        <li>Ebean enhances the byte code of the getters and setters to intercept calls to read and write data from the object
+                    and perform analogous database operations as appropriate.</li>
+			        <li>When entity classes are automatically generated from the database schema your work creating and maintaining data access layers is greatly reduced.</li>
+			    </ul>
+			</div>
+	    </div> <!-- //end section -->
+
+	    <div class="section">
+	        <div class="page-header">
+	            <h2>A more complex entity</h2>
+	        </div>
+	        <p>The annotations allow you to describe complex data relationships.</p>
+{% highlight java %}
+/**
+ * The persistent class for the _ database table.
+ * 
+ */
+{% endhighlight %}        
+	        
+        </div> <!-- //end section -->
+
+	</div> <!-- //end span9 -->
+		</div> <!-- //end row -->	
