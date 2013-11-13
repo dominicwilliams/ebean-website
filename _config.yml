@@ -4,3 +4,4 @@ pygments: true
 timezone: America/Los_Angeles
 encoding: UTF-8
 paginate: 5
+baseurl: http://dominicwilliams.github.io/ebean-website/
