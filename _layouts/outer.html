@@ -9,18 +9,18 @@
     <!-- Bootstrap css -->
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <!-- Theme css -->
-    <link href="/css/colorfrog.css" rel="stylesheet" media="screen">   
+    <link href="{{ site.url }}/css/colorfrog.css" rel="stylesheet" media="screen">   
     <!--  Code highlighting -->
-    <link href="/css/pygments/code-highlighting.css" rel="stylesheet" media="screen">   
+    <link href="{{ site.url }}/css/pygments/code-highlighting.css" rel="stylesheet" media="screen">   
 
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <script src="/js/respond.min.js"></script>
+    <link href="{{ site.url }}/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <script src="{{ site.url }}/js/respond.min.js"></script>
 
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script> 
-    <script src="/js/jquery.fitvids.js"></script>
-    <script src="/js/colorfrog.js"></script>
+    <script src="{{ site.url }}/js/jquery.fitvids.js"></script>
+    <script src="{{ site.url }}/js/colorfrog.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script>google.maps.event.addDomListener(window, 'load', initialize);</script>
     
@@ -45,13 +45,13 @@
         
         <nav class="navbar-collapse collapse">
             <ul class="nav nav-pills">            
-                <li class="{% if page.group == 'index' %} current active {% endif %}"><a href="/index.html">Home</a></li>
-                <li class="{% if page.group == 'about' %} current active {% endif %}"><a href="/about.html">About</a></li>            
-                <li class="{% if page.group == 'demos' %} current active {% endif %}"><a href="/demo-some-simple-queries.html">Demos</a></li>            
-                <li class="{% if page.group == 'quick-start' %} current active {% endif %}"><a href="/quick-start.html">Quick Start</a></li>            
-                <li class="{% if page.group == 'documentation' %} current active {% endif %}"><a href="/documentation-introduction.html">Documentation</a></li>                        
-                <li class="{% if page.group == 'support' %} current active {% endif %}"><a href="/support.html">Support</a></li>      
-                <li class="{% if page.group == 'blog' %} current active {% endif %}"><a href="/blog.html">Blog</a></li>         
+                <li class="{% if page.group == 'index' %} current active {% endif %}"><a href="{{ site.url }}/index.html">Home</a></li>
+                <li class="{% if page.group == 'about' %} current active {% endif %}"><a href="{{ site.url }}/about.html">About</a></li>            
+                <li class="{% if page.group == 'demos' %} current active {% endif %}"><a href="{{ site.url }}/demo-some-simple-queries.html">Demos</a></li>            
+                <li class="{% if page.group == 'quick-start' %} current active {% endif %}"><a href="{{ site.url }}/quick-start.html">Quick Start</a></li>            
+                <li class="{% if page.group == 'documentation' %} current active {% endif %}"><a href="{{ site.url }}/documentation-introduction.html">Documentation</a></li>                        
+                <li class="{% if page.group == 'support' %} current active {% endif %}"><a href="{{ site.url }}/support.html">Support</a></li>      
+                <li class="{% if page.group == 'blog' %} current active {% endif %}"><a href="{{ site.url }}/blog.html">Blog</a></li>         
                 <li><a href="https://github.com/ebean-orm/avaje-ebeanorm">GitHub</a></li>         
             </ul>
         </nav>
