@@ -1,0 +1,63 @@
+{% highlight java %}
+/**
+ * The persistent class for the user database table.
+ * 
+ */
+@Entity
+@NamedQuery(name="User.findAll", query="SELECT j FROM User j")
+public class User implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @Column(name="sp_id", insertable=false, updatable=false)
+    private int userId;
+
+    @Column(name="user_name")
+    private String userName;
+
+    @Column(name="email")
+    private String email;
+    
+    //bi-directional many-to-one association to JobReview
+    @OneToMany(mappedBy="user")
+    private List<ProductReview> productReviews;
+
+    public String getUserName() {
+        return this.userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+    
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public List<ProductReview> getProductReviews() {
+        return this.productReviews;
+    }
+
+    public void setProductReviews(List<ProductReview> productReviews) {
+        this.productReviews = productReviews;
+    }
+
+    public ProductReview addProductReview(ProductReview productReview) {
+        getProductReviews().add(productReview);
+        productReview.setUser(this);
+
+        return productReview;
+    }
+
+    public ProductReview removeProductReview(ProductReview productReview) {
+        getProductReviews().remove(productReview);
+        productReview.setUser(null);
+
+        return productReview;
+    }
+}
+{% endhighlight %}

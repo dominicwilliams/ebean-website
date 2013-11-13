@@ -1,0 +1,38 @@
+---
+layout: technical
+---
+<div class="col-sm-3">
+    <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+            <li class="nav-header">Documentation</li>
+            <li class="{% if page.sub-group == 'introduction' %} active {% endif %}"><a href="documentation-introduction.html">How to read</a></li>
+            <li class="{% if page.sub-group == 'maven-dependencies' %} active {% endif %}"><a href="documentation-maven-dependencies.html">Maven dependencies</a></li>
+            <li class="{% if page.sub-group == 'download-jars' %} active {% endif %}"><a href="documentation-download-jars.html">Downloading the Jar files</a></li>
+            <li class="{% if page.sub-group == 'writing-an-entity-class' %} active {% endif %}"><a href="documentation-writing-an-entity-class.html">Writing an entity class</a></li>
+            <li class="{% if page.sub-group == 'generating-an-entity-class' %} active {% endif %}"><a href="documentation-generating-an-entity-class.html">Generating an entity class</a></li>
+            <li class="{% if page.sub-group == 'configuring-ebean' %} active {% endif %}"><a href="documentation-configuring-ebean.html">Configuring Ebean</a></li>
+            <li class="{% if page.sub-group == 'dynamic-entity-enhancement' %} active {% endif %}"><a href="documentation-dynamic-entity-enhancement.html">Dynamic entity enhancement</a></li>
+            <li class="{% if page.sub-group == 'static-entity-enhancement' %} active {% endif %}"><a href="documentation-static-entity-enhancement.html">Static entity enhancement</a></li>
+            <li class="{% if page.sub-group == 'writing-database-queries' %} active {% endif %}"><a href="documentation-writing-database-queries.html">Writing database queries</a></li>
+            <li class="{% if page.sub-group == 'updating-the-database' %} active {% endif %}"><a href="documentation-updating-the-database.html">Updating the database</a></li>
+            <li class="{% if page.sub-group == 'database-transactions' %} active {% endif %}"><a href="documentation-database-transactions.html">Database transactions</a></li>
+            <li class="{% if page.sub-group == 'lazy-and-eager-fetching' %} active {% endif %}"><a href="documentation-lazy-and-eager-fetching.html">Lazy and eager fetching</a></li>
+            <li class="{% if page.sub-group == 'partial-objects' %} active {% endif %}"><a href="documentation-partial-objects.html">Partial objects</a></li>
+            <li class="{% if page.sub-group == 'auto-tuning-lazy-behavior' %} active {% endif %}"><a href="documentation-auto-tuning-lazy-behavior.html">Auto-tuning lazy behavior</a></li>
+            <li class="{% if page.sub-group == 'ebean-caching' %} active {% endif %}"><a href="documentation-ebean-caching.html">Ebean caching</a></li>
+            <li class="{% if page.sub-group == 'complex-data-relationships' %} active {% endif %}"><a href="documentation-complex-data-relationships.html">Complex data relationships</a></li>
+            <li class="{% if page.sub-group == 'queries-with-raw-sql' %} active {% endif %}"><a href="documentation-queries-with-raw-sql.html">Queries with raw SQL</a></li>
+            <li class="{% if page.sub-group == 'ebean-and-play-framework' %} active {% endif %}"><a href="documentation-ebean-and-play-framework.html">Ebean and Play Framework</a></li>
+        </ul>
+    </div>      
+</div> <!-- //end span3 -->
+
+<div class="col-sm-9">
+    <div class="page-header">
+        <h1>{{ page.heading }}</h1>
+    </div>
+</div> <!-- //end span9 -->
+
+<div class="col-sm-9">
+    {{ content }}
+</div>

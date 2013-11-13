@@ -8,47 +8,51 @@ hero-sub: Every project should have a reason
 ---
 <div class="row">
     <div class="col-md-8">
-        <p><strong>Ebean is an open source "Object Relational Mapping" toolkit for Java. This means it gives you
-        a way to query SQL databases using Java statements and automatically load, save and update database data using Java objects.</strong></p>
+        <p><strong>Ebean is an open source "Object Relational Mapping" toolkit for Java that is simple and agile.</strong></p>
         
-	    <p>The goal of Ebean is to provide a simpler alternative to <a href="http://en.wikipedia.org/wiki/Java_Persistence_API">JPA (Java Persistence Architecture)</a> ORM implementations
+        <div class="bs-callout bs-callout-info">
+            <p>An ORM gives you a way to query SQL databases using Java statements that automatically load, save
+            and update databases through your Java objects (which are transformed into database proxies).</p>
+        </div>
+        
+	    <p>Ebean was created to provide a simpler alternative to <a href="http://en.wikipedia.org/wiki/Java_Persistence_API">JPA (Java Persistence Architecture)</a> ORM implementations
 	    such as <a href="http://www.hibernate.org/">Hibernate</a> and <a href="http://www.eclipse.org/eclipselink/">EclipseLink</a>.</p> 
 	    
 	    <div class="bs-callout bs-callout-warning">
-	        JPA was developed to satisfy numerous demands from existing
-            ORM vendors and powerful players in the JEE space with the consequence it is far too complex for todays agile development approach.
+	        JPA is often too complex for today's agile development environments, partly because because it is a compromise 
+	        designed to satisfy numerous demands from competing ORM vendors and JEE market players.
 	    </div>
 
 	    <p>Ebean's objectives are to:</p>
 	    
 	    <ul>
-	       <li>Provide an ORM toolkit that is fast to learn, code against and maintain.</li>
+	       <li>Provide an ORM toolkit that is <em>fast to learn, code against and maintain</em>.</li>
 	       <li>Support developers in their quest to create clean, concise code.</li>
-	       <li>Use programming extractions that increase safety while providing maximum performance.</li>
+	       <li>Use programming abstractions that increase safety while providing maximum performance.</li>
 	       <li>Be nothing more than a thin layer over databases and not get in the way of developers.</li>
-	       <li>Allow SQL to be a first class citizen when developers want to use it.</li>
+	       <li>Make sure SQL remains a first class citizen when developers want to use it.</li>
 	    </ul>
 	    <div class="bs-callout bs-callout-info">
-	        <p>Ebean achieves this by providing a clean “sessionless” API and simpler query language.<br/>Relative to JPA, this means:</p>
+	       <p>If you are familiar with JPA you will notice that Ebean provides a much cleaner "sessionless" API and a simpler query language with:</p>
             <ul>
                 <li>No Session Object (or UnitOfWork or EntityManager).</li>
                 <li>No Attached or Detached Beans.</li>
-                <li>No merge(), persist(), flush(), or clear(). Instead Ebean has save() and delete().</li>
+                <li>No merge(), persist(), flush(), or clear().</li>
                 <li>You can load objects with raw SQL if you want.</li>
             </ul>
 	    </div>
 		<p>Ebean has been in production for 5 years and is pre-integrated into the popular <a href="http://www.playframework.com/">Play</a> framework.</p>
-		<p><em>Take a look at the code <a href="demos.html">demos</a> to see how simple Ebean can be.</em><p>
+		<p><em>Take a look at the code <a href="demos.html">demos</a> showing how Ebean is used.</em><p>
     </div>
     <div class="col-md-4">
     
 		<div class="panel panel-default">
 		    <div class="feature">
 		        <div class="icon example">
-                    <a href="examples.html">Examples</a>
+                    <a href="demo-some-simple-queries.html">Examples</a>
                 </div>
 		    </div>
-			<div class="panel-body"><a href="demos.html">Demos. A few lines of code are worth 1000 words</a></div>
+			<div class="panel-body"><a href="demo-some-simple-queries.html">Demos. A few lines of code are worth 1000 words</a></div>
 		</div>
 		
 		<div class="panel panel-default">

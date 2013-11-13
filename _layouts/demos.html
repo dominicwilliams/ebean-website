@@ -1,0 +1,28 @@
+---
+layout: technical
+---
+<div class="col-sm-3">
+    <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+            <li class="nav-header">Code demos</li>
+            <li class="{% if page.sub-group == 'some-simple-queries' %} active {% endif %}"><a href="demo-some-simple-queries.html">Some simple queries</a></li>
+            <li class="{% if page.sub-group == 'some-complex-queries' %} active {% endif %}"><a href="demo-some-complex-queries.html">More complex queries</a></li>
+            <li class="{% if page.sub-group == 'updating-the-database' %} active {% endif %}"><a href="demo-updating-the-database.html">Updating the database</a></li>
+            <li class="{% if page.sub-group == 'creating-entity-classes' %} active {% endif %}"><a href="demo-creating-entity-classes.html">Creating entity classes</a></li>
+            <li class="{% if page.sub-group == 'overriding-lazy-loading' %} active {% endif %}"><a href="demo-overriding-lazy-loading.html">Override default lazy loading</a></li>
+            <li class="{% if page.sub-group == 'auto-tuning-lazy-loading' %} active {% endif %}"><a href="demo-auto-tuning-lazy-loading.html">Auto-tuning lazy loading</a></li>
+            <li class="{% if page.sub-group == 'querying-with-raw-sql' %} active {% endif %}"><a href="demo-querying-with-raw-sql.html">Using raw SQL to query</a></li>
+            <li class="{% if page.sub-group == 'database-transactions' %} active {% endif %}"><a href="demo-database-transactions.html">Database transactions</a></li>
+        </ul>
+    </div>      
+</div> <!-- //end span3 -->
+
+<div class="col-sm-9">
+    <div class="page-header">
+        <h1>{{ page.heading }} demo</h1>
+    </div>
+</div> <!-- //end span9 -->
+
+<div class="col-sm-9">
+    {{ content }}
+</div>

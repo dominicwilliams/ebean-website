@@ -1,0 +1,60 @@
+---
+layout: documentation
+group: documentation
+sub-group: maven-dependencies
+heading: Maven dependencies
+---
+<div class="section">
+    <p>Minimal dependencies are:</p>
+    <ul>
+        <li>Ebean ORM</li>
+        <li>Java persistence annotations for your entities</li>
+    </ul>
+
+{% highlight xml %}
+<dependency> <!-- EBean ORM. Requires enhanced entity classes -->
+    <groupId>org.avaje.ebeanorm</groupId>
+    <artifactId>avaje-ebeanorm</artifactId>
+    <version>3.2.4</version>
+</dependency>
+
+<dependency> <!-- JPA annotations needed to create entity classes -->
+    <groupId>javax.persistence</groupId>
+    <artifactId>persistence-api</artifactId>
+    <version>1.0.2</version>
+    <scope>provided</scope>
+</dependency>
+{% endhighlight %}
+    
+    <p>If you wish to dynamically enhance your entity classes at application startup (i.e. you do not want to add
+    entity class enhancement to the build process using the Ebean Maven plugin) you also need:</p>
+    <ul>
+        <li>The Ebean bytecode enhancement agent</li>
+        <li>The Ebean agent loader</li>
+    </ul>
+    
+    <div class="bs-callout bs-callout-info">
+        <p>If you do not understand enhancement yet, just include the following dependencies anyway, it cannot do any harm</p>
+    </div>
+    
+{% highlight xml %}
+<dependency> <!-- Agent that dynamically enhances entity classes byte code -->
+    <groupId>org.avaje.ebeanorm</groupId>
+    <artifactId>avaje-ebeanorm-agent</artifactId>
+    <version>3.2.2</version>
+</dependency>
+
+<dependency> <!-- Loader for loading/running byte code agent from classpath -->
+    <groupId>org.avaje</groupId>
+    <artifactId>avaje-agentloader</artifactId>
+    <version>1.1.1</version>
+</dependency>
+{% endhighlight %}
+
+    <p>Remember to check back regularly to make sure you are using the latest Ebean dependencies.</p>
+
+    <div class="bs-callout bs-callout-info">
+        <p>If you are using the Play Framework, see our <a href="documentation-ebean-and-play-framework.html">special notes</a> on how to manage dependencies there.</p>
+    </div>
+
+</div> <!-- //end section -->

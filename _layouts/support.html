@@ -1,0 +1,22 @@
+---
+layout: technical
+---
+<div class="col-sm-3">
+    <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+            <li class="nav-header">Code demos</li>
+            <li class="{% if page.sub-group == 'community' %} active {% endif %}"><a href="support-community.html">Community</a></li>
+            <li class="{% if page.sub-group == 'faq' %} active {% endif %}"><a href="support-faq.html">FAQ</a></li>
+        </ul>
+    </div>      
+</div> <!-- //end span3 -->
+
+<div class="col-sm-9">
+    <div class="page-header">
+        <h1>{{ page.heading }}</h1>
+    </div>
+</div> <!-- //end span9 -->
+
+<div class="col-sm-9">
+    {{ content }}
+</div>
