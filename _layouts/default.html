@@ -2,28 +2,28 @@
 layout: outer
 title: Ebean ORM for Java
 ---
-    {% if page.hero %}
-    <div class="jumbotron">
-        <div class="container">
-            <h1>{{ page.hero-title }}</h1>
-            <h2>{{ page.hero-strap }}</h2>
-        </div>
-    </div> <!-- //end hero-unit -->
-    {% endif %}
-    {% if page.hero-sub %}
-    <div class="jumbotron-sub">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <p>{{ page.hero-sub }}</p>
-                </div>
+{% if page.hero %}
+<div class="jumbotron{% if page.title-jumbotron %}-unit{% endif %}">
+    <div class="container">
+        <h1>{{ page.hero-title }}</h1>
+        <h2>{{ page.hero-strap }}</h2>
+    </div>
+</div> <!-- //end hero-unit -->
+{% endif %}
+{% if page.hero-sub %}
+<div class="jumbotron-sub">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <p>{{ page.hero-sub }}</p>
             </div>
         </div>
-    </div> <!-- //end submain -->
-    {% endif %}
+    </div>
+</div> <!-- //end submain -->
+{% endif %}
 
-    <div class="container content {% if page.hero %} underHero {% endif %}">
-    
-    {{ content }}
-    
-    </div> <!-- //end container --> 
+<div class="container content {% if page.hero %}underHero{% endif %} {% if page.blog %}blog{% endif %}">
+
+{{ content }}
+
+</div> <!-- //end container --> 
