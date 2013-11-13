@@ -62,7 +62,7 @@ hero-sub: Thin object mapping for speed and convenience. The power of SQL.
 		<h1>Blog Posts</h1>
 		<ul class="posts">
 			{% for post in site.posts %}
-			    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+			    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url | remove_first:'/' }}">{{ post.title }}</a></li>
 			{% endfor %}
 		</ul>
     </div>

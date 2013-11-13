@@ -14,7 +14,7 @@ hero-strap: Occasionally useful ramblings and announcements from the Ebean team 
     </div> <!-- //end span4 -->
     <div class="col-sm-8">
         {% for post in site.posts %}
-        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        <h2><a href="{{ site.baseurl }}{{ post.url | remove_first:'/' }}">{{ post.title }}</a></h2>
         <div class="row">
             <div class="col-sm-3">
                 <img src="{{ site.baseurl }}img/ebean/giant-bean.png" alt="" />           
@@ -23,7 +23,7 @@ hero-strap: Occasionally useful ramblings and announcements from the Ebean team 
             <div class="col-sm-9">
                 {{ post.date | date_to_string }}</span> &raquo; {{ post.author }}<br/>
                 <p class="lead">{{ post.excerpt }}</p>
-                <a class="btn btn-large" href="blog-single.html">Continue reading</a>
+                <a class="btn btn-large" href="{{ site.baseurl }}{{ post.url | remove_first:'/' }}">Continue reading</a>
                 <!-- this link with an arrow, ala leapfrog -->
             </div> <!-- //end span4 -->                 
         </div> <!-- //end row -->
